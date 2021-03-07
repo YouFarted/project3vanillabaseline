@@ -1,0 +1,6 @@
+The goal for this stage is to have this project include placeholder tests
+and connect to a backend sequelize database that links for mysql
+such that I can begin to construct a TypeScript project that mirrors its
+layout and beginning functionality.
+These pieces aren't done yet but I have the barebone structure from which I
+can work to add the above.
