@@ -6,9 +6,10 @@
   "scripts": {
     "main": "server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "seed": "node server.js seed",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "justnodemon" : "nodemon --ignore 'client/*'",
+    "justnodemon": "nodemon --ignore 'client/*'",
     "client": "cd client && npm run start",
     "seed-todo": "node scripts/seedDB.js",
     "install": "cd client && npm install",
@@ -29,11 +30,13 @@
   "homepage": "https://github.com/YouFarted/project3vanillabaseline#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
+    "mysql2": "^2.2.5",
     "node-env": "^0.1.6",
-    "sequelize": "^6.5.0",
-    "sqlite3": "^5.0.2"
+    "sequelize": "^5.8.6"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
