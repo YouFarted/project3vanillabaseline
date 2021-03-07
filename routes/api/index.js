@@ -3,14 +3,13 @@
 const path = require("path");
 
 const router = require("express").Router();
-const subapiRoutes = require("./subapi");
+const usersRoutes = require("./usersapi");
 
-// Post routes
-router.use("/api", subapiRoutes);
+// Api routes
+router.use("/users", usersRoutes);
 
 // If no API routes are hit, fallback to the static react build
-router.use(function(req, res) {
-
+router.use(function (req, res) {
   res.status(404).end("there's no api for " + req.url + ". Yer bad");
   /*
     examples had this for a fallback.  It seems like suspicious slop,
@@ -20,7 +19,7 @@ router.use(function(req, res) {
     conditional based on if we're running development or production
     */
 
-    //res.sendFile(path.join(__dirname, "../../client/build/index.html"));
-  });
+  //res.sendFile(path.join(__dirname, "../../client/build/index.html"));
+});
 
 module.exports = router;
