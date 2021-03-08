@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const routes = require("./routes");
 const app = express();
+const doSeed = require("./lib/databaseSeed");
 const PORT = process.env.PORT || 3001;
 
 let doOnlySeeding = false;
@@ -14,7 +15,7 @@ if (args.length === 1 && args[0] === "seed") {
 }
 
 if (doOnlySeeding) {
-  require("./lib/databaseSeed")().catch((e) => console.error(e));
+  doSeed().catch((e) => console.error(e));
 } else {
   // Define middleware here
   app.use(express.urlencoded({ extended: true }));

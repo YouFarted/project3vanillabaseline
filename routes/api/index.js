@@ -4,9 +4,11 @@ const path = require("path");
 
 const router = require("express").Router();
 const usersRoutes = require("./usersapi");
+const utilsRoutes = require("./utils");
 
 // Api routes
 router.use("/users", usersRoutes);
+router.use("/utils", utilsRoutes);
 
 // If no API routes are hit, fallback to the static react build
 router.use(function (req, res) {
